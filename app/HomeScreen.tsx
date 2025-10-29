@@ -1,6 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { Button, Text, View } from "react-native";
+import { Chuckjoke } from "./Chuckjoke";
 
 
 
@@ -13,15 +14,15 @@ export function HomeScreen() {
  console.log("Hämpta från api")
  //https://api.chucknorris.io/jokes/random
 
- const respose= await fetch("https://api.chucknorris.io/jokes/random")
- const resultjson = await respose.json()
+ const response= await fetch("https://api.chucknorris.io/jokes/random")
+ const resultjson: Chuckjoke = await response.json()
  console.log(resultjson.value)
  setJoke(resultjson.value)
   }
   
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
+      <Text>Home Screen är starten</Text>
       <Text>{joke}</Text>
 
       <Button title="API"
