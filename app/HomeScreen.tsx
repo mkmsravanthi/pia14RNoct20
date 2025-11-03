@@ -1,7 +1,8 @@
+import { Chuckjoke } from "@/Models/Chuckjoke";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { Button, Text, View } from "react-native";
-import { Chuckjoke } from "./Chuckjoke";
+
 
 
 

@@ -1,5 +1,5 @@
+import { Chuckjoke, ChuckSearchResult } from "@/Models/Chuckjoke"
 import AsyncStorage from "@react-native-async-storage/async-storage"
-import { Chuckjoke, ChuckSearchResult } from "./Chuckjoke"
 
  
  

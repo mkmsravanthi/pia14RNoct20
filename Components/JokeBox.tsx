@@ -1,10 +1,12 @@
+
+import { checkSavedJoke, deleteSavedJoke, saveJoke } from "@/api/ChuckAPI";
+import { jokebackground, jokebordersaved } from "@/constants/jokecolors";
 import { useEffect, useState } from "react";
-import { Button, Text, View } from "react-native";
-import { checkSavedJoke, deleteSavedJoke, saveJoke } from "./ChuckAPI";
+import { Button, StyleSheet, Text, View } from "react-native";
 
 type JokeBoxProps = {
     joketext:string,
-    onDelete:()=>void
+    onDelete?:()=>void
 }
 
 export function JokeBox({joketext, onDelete}:JokeBoxProps) {
@@ -12,7 +14,7 @@ export function JokeBox({joketext, onDelete}:JokeBoxProps) {
 
     useEffect(()=>{
         checksaved()
-    },[])
+    },[joketext])
 
  async function checksaved() {
         const saved = await checkSavedJoke(joketext)
@@ -26,7 +28,7 @@ export function JokeBox({joketext, onDelete}:JokeBoxProps) {
     }
     
     return(
-         <View style={{margin:30,padding:10,backgroundColor:isSaved?"skyblue":"yellow"}}>
+         <View style={[ styles.jokeview,isSaved ? styles.jokeviewsaved:styles.jokeviewnotsaved]}>
         
              <Text>{joketext}</Text>
 
@@ -46,6 +48,23 @@ export function JokeBox({joketext, onDelete}:JokeBoxProps) {
               </View>
     )
 }
+
+const styles = StyleSheet.create({
+    jokeview :{
+        margin:"100%",
+        height:200,
+        padding:10,
+        backgroundColor: jokebackground,
+        borderWidth:10,
+        borderRadius:20
+    },
+    jokeviewsaved :{
+     borderColor:jokebordersaved,
+    },
+    jokeviewnotsaved :{
+    borderColor:jokebackground,
+    },
+})
 
 /* async function deleteJoke() {
     await deleteSavedJoke(joketext)

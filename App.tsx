@@ -8,9 +8,9 @@ import { DetailsScreen } from './app/DetailsScreen';
 import { HomeScreen } from './app/HomeScreen';
 import { RandomScreen } from './app/RandomScreen';
 import { SavedScreen } from './app/SavedScreen';
-import { SearchDetailScreen } from './app/SearchDetailScreen';
-import { SearchScreen } from './app/SearchScreen';
 import { ThirdScreen } from './app/ThirdScreen';
+import { SearchDetailScreen } from './app/search/SearchDetailScreen';
+import { SearchScreen } from './app/search/SearchScreen';
 
 
 
@@ -34,7 +34,7 @@ const RootStack = createNativeStackNavigator({
     Details:DetailsScreen,
     Third: ThirdScreen,
     Categories: CategoriesScreen,
-    CatogeryDetails: CategoryDetailScreen,
+    CategoryDetails: CategoryDetailScreen,
     Random: RandomScreen,
     Search: SearchScreen,
     SearchDetail: SearchDetailScreen,

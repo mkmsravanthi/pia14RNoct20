@@ -1,8 +1,8 @@
+import { APISearch } from "@/api/ChuckAPI";
+import { Chuckjoke } from "@/Models/Chuckjoke";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { Button, FlatList, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { APISearch } from "./ChuckAPI";
-import { Chuckjoke } from "./Chuckjoke";
 
 export function SearchScreen() {
     const navigation = useNavigation()
